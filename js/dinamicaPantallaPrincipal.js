@@ -22,43 +22,46 @@ function mostrarPeliculasYSeries(arrayDePeliculasYSeries) {
         }
     }
 
+    // Creamos una variable para ir acumulando todo el HTML
+    let tarjetasHTML = "";
+
     arrayDePeliculasYSeries.forEach(item => {
-        const tarjeta = document.createElement("div");
-        tarjeta.className = "tarjeta-contenido";
+        // 1. Calculamos si es favorito igual que antes
+        const esFavorito = item.tipo === "pelicula" 
+            ? favoritosPeliculas.includes(item.id) 
+            : favoritosSeries.includes(item.id);
+        
+        // 2. Definimos la clase del corazón
+        const claseFavorito = esFavorito ? "favorito" : "";
 
-        const link = document.createElement("a");
-        link.href = `./serie-pelicula.html?id=${item.id}`;
+        // 3. (Opcional) Si tu JSON tiene el género o el año, lo usamos. 
+        // Si no tienes el año en el JSON, puedes borrar esa parte.
+        const genero = item.genero ? item.genero.toUpperCase() : "CONTENIDO";
 
-        const imagen = document.createElement("img");
-        imagen.src = item.imagen.url;
-        imagen.alt = item.imagen.alt;
-
-        const titulo = document.createElement("h4");
-        titulo.className = "titulo-tarjeta";
-        titulo.textContent = item.nombre;
-
-        //Creamos el corazon dentro de un span
-        const corazon = document.createElement("span");
-        corazon.classList.add("corazon");
-        corazon.dataset.id = item.id; //Le indicamos el id de la serie/pelicula
-        corazon.dataset.tipo = item.tipo;//Le indicamos el tipo (Serie o pelicula)
-        corazon.innerHTML = "❤";
-
-        //El ternario devuelve true o false si el array de favoritos por cada serie o pelicula, tiene dentro el id de la P/S
-        //En caso de que la id este devuelve true, si no devuelve false
-        //                 Si es igual a pelicula      Corrobora si la id esta dentro         Corrobora si la id esta dentro
-        const esFavorito = item.tipo === "pelicula" ? favoritosPeliculas.includes(item.id) : favoritosSeries.includes(item.id);
-
-        if (esFavorito) {//Si es favorito agrega la clase
-            corazon.classList.add("favorito");
-        }
-
-        link.appendChild(imagen);
-        link.appendChild(titulo);
-        tarjeta.appendChild(link);
-        tarjeta.appendChild(corazon);
-        nodoElement.appendChild(tarjeta);
+        // 4. Armamos la tarjeta escribiendo HTML puro, inyectando las variables con ${}
+        tarjetasHTML += `
+            <a href="./serie-pelicula.html?id=${item.id}" class="tarjeta-contenido">
+                <div class="imagen-contenedor">
+                    <img src="${item.imagen.url}" alt="${item.imagen.alt}">
+                    <div class="gradiente"></div>
+                </div>
+                
+                <div class="info-tarjeta">
+                    <h3 class="titulo-tarjeta">${item.nombre}</h3>
+                    <p class="metadata-tarjeta">${genero}</p>
+                    <div class="divisor"></div>
+                    
+                    <span class="corazon ${claseFavorito}" data-id="${item.id}" data-tipo="${item.tipo}">
+                        ❤
+                    </span>
+                </div>
+            </a>
+        `;
     });
+
+    // 5. Finalmente, inyectamos todo el código de golpe en el DOM.
+    // Esto es mucho más rápido para el navegador que hacer appendChild 10 veces por tarjeta.
+    nodoElement.innerHTML = tarjetasHTML;
 }
 
 document.addEventListener("click", (cora) => {//Esto se ejecuta cuando haya un click

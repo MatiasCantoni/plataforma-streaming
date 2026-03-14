@@ -1,8 +1,9 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Esto evita que los bordes rompan tu grid */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
-
 body {
   background-color: #262643;
 }
@@ -15,7 +16,7 @@ body {
   display: flex;
   justify-content: center;
   font-size: 24px;
-  color: gray;
+  color: white;
   cursor: pointer;
   transition: color 0.2s ease;
   margin-left: 8px;
@@ -106,12 +107,72 @@ div {
 }
 
 .tarjeta-contenido {
-  display: block;
-  cursor: pointer;
-  background-color: #605c93;
+  display: flex;
+  flex-direction: column;
+  background-color: #5c5589; /* El color de fondo de la zona de texto */
+  border-radius: 12px;
+  overflow: hidden; /* Hace que la imagen respete las puntas redondeadas */
   text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-contenido:hover {
+  transform: scale(1.03); /* Un zoom sutil a toda la tarjeta */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.imagen-contenedor {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  overflow: hidden; 
 }
 
+.imagen-contenedor img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gradiente {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, #5c5589, transparent);
+}
+.info-tarjeta {
+  padding: 0.5rem 1rem 1rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo-tarjeta {
+  color: #fdfdfd;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  /* Estas 3 líneas evitan que un título muy largo rompa la tarjeta */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.metadata-tarjeta {
+  color: #d1cadd;
+  font-size: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+/* La línea sutil que separa el texto del corazón */
+.divisor {
+  width: 80%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  margin-bottom: 0.8rem;
+}
 
 .tarjeta-contenido img {
   width: 100%;
@@ -119,7 +180,8 @@ div {
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: transform 0.3s ease;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .titulo-tarjeta{
@@ -132,9 +194,9 @@ div {
   text-decoration: none;
   color: #ecd5ed;
 }
-
 .tarjeta-contenido:hover img {
-  transform: scale(0.9);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
 
 @media (max-width: 768px) {
@@ -153,7 +215,7 @@ div {
 }
 
 
-@media (max-width: 375px) {
+@media (max-width: 426px) {
   .grilla-contenido {
     grid-template-columns: 1fr;
   }
@@ -174,5 +236,14 @@ div {
     gap: 1rem;
     width: 100%;
   }
-
+  .titulo-tarjeta {
+  font-size: 0.97rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+  /* Estas 3 líneas evitan que un título muy largo rompa la tarjeta */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
 }

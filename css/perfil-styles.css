@@ -1,162 +1,201 @@
+/* 1. RESET Y FUENTE (Igual que antes, la clave es la limpieza) */
 * {
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #262643;
+    background-color: #0f0f1e; /* Un azul casi negro más profundo */
+    color: #fdfdfd;
 }
 
 .header_nav a:last-of-type {
-    background-color: lightgrey;
-}
-
-.flex-row {
-    display: flex;
-    flex-direction: row;
-
+    background-color: rgba(165, 157, 233, 0.15);
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    color: #fdfdfd;
 }
 
 .imagen {
     width: 10%;
 }
 
+/* 2. EL BOTÓN CERRAR SESIÓN (Más discreto y elegante) */
 .section__button--cerrarSesion {
-    width: 100%;
-    height: 4em;
-    display: inline-flex;
-    justify-content: flex-end;
-    align-items: center;
+    padding: 2rem;
 }
 
-.section__button--cerrarSesion a {
-    margin-right: 1em;
+.cerrar-sesion {
+    background: transparent !important;
+    border: 1px solid #ff4b2b !important;
+    color: #ff4b2b !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+.cerrar-sesion:hover {
+    background: #ff4b2b !important;
+    color: white !important;
+}
+
+/* 3. EL PANEL DE PERFIL (Tarjetas con efecto cristal) */
 .perfil {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-     color: #a59de9;
-}
-.mensaje-error{
-    color: red;
-    font-size: 11px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+.perfil__datos,
+.perfil__metodo-pago {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(165, 157, 233, 0.15);
+    border-radius: 20px;
+    padding: 2rem !important;
+    backdrop-filter: blur(10px);
+    flex: 1 1 45%;
+    min-width: 320px;
+    border-right-style: none !important; /* Quitamos tu borde ridge */
+}
+
+/* 4. AVATAR (Efecto de halo) */
 .perfil__avatar {
-    width: 8%;
+    width: 150px !important;
+    margin: 0 auto 1.5rem auto !important;
     display: flex;
     flex-direction: column;
-    margin-left: -3%;
-    margin-top: -2%;
-    text-align: center;
-    text-decoration: underline;
+    align-items: center;
+    gap: 1rem;
 }
 
 .perfil__avatar img {
+    width: 100%;
+    max-width: 150px;
     border-radius: 50%;
-    border: 1px solid #a59de9;;
+    border: 3px solid #a59de9;
+    box-shadow: 0 0 20px rgba(165, 157, 233, 0.3);
+    transition: transform 0.3s ease;
 }
 
-.perfil__datos {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    margin: 2%;
-    border-right-style: ridge;
-    padding-right: 2em;
+.perfil__avatar img:hover {
+    transform: rotate(5deg) scale(1.05);
+}
+
+.usuario-js {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #a59de9;
+    text-decoration: none !important;
+}
+
+/* 5. INPUTS MODERNOS (Oscuros y elegantes) */
+h4 {
+    text-decoration: none !important;
+    text-align: left !important;
+    color: #a59de9;
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #a59de9;
+    padding-left: 10px;
 }
 
 .perfil__datos-grupo {
     display: flex;
-    justify-content: space-between;
-    margin-top: 2em;
+    flex-direction: column !important; /* Etiquetas arriba, input abajo */
+    align-items: flex-start !important;
+    gap: 8px;
+    margin-bottom: 1.5rem;
 }
 
-.perfil__datos-grupo input {
-    padding: 0.2em;
+.perfil__datos-grupo p,
+.perfil__datos-grupo label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 0;
 }
 
-.perfil__metodo-pago {
-    width: 30%;
-    margin: 2% 0 0 0%;
+input[type="text"], 
+input[type="password"], 
+.categoria {
+    width: 100%;
+    background: #1c1c31;
+    border: 1px solid #3f3f5a;
+    border-radius: 8px;
+    padding: 0.8rem !important;
+    color: white;
 }
 
-h4 {
-    text-decoration: underline;
-    text-align: center;
+input:focus {
+    outline: none;
+    border-color: #a59de9;
+    box-shadow: 0 0 10px rgba(165, 157, 233, 0.2);
 }
 
+/* 6. MÉTODOS DE PAGO (Más limpios) */
 .perfil__metodo-pago_tipo {
-    padding-left: 4%;
-    margin-top: 0.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
-.perfil__metodo-pago_tipo-credito {
-    padding-left: 1.2em;
-    margin-bottom: 1em;
-    gap: 0.3em;
+.perfil__metodo-pago_tipo input[type="radio"] {
+    margin-right: 0.5rem;
+    transform: scale(1.05);
 }
 
-.perfil__metodo-pago_tipo-credito input {
-    padding: 0.5em;
+.perfil__metodo-pago_tipo input[type="radio"] + label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 1.75rem;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
 }
 
-.perfil__metodo-pago_tipo-credito input:last-child {
-    width: 1.8em;
-
+.flex-row {
+    background: rgba(0,0,0,0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 5px;
 }
 
-.perfil__metodo-pago_tipo-cupon {
-    gap: 0.7em;
-    margin-left: 1.5em;
-    margin-bottom: 0.9em;
+/* 7. CARRUSELES (Efecto de cine) */
+.similares {
+    flex: 1 1 45%;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.perfil__metodo-pago_tipo p:last-child {
-    margin-top: 0.9em;
+.similares h3 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #fdfdfd !important;
     text-align: center;
 }
-
-.botones {
+.acomodar-radio{
     display: flex;
-    justify-content: center;
-    margin-top: 1.7em;
-    gap: 1.25em;
-    margin-bottom: 1.25em;
+    align-items: center;
+    gap: 1rem;
+}
+.carrusel {
+    width: 100%;
+    max-width: 18.75em;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(165, 157, 233, 0.2);
+    transition: border-color 0.3s ease;
 }
 
-.btn {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.9em;
-    border-radius: 1em;
-    padding: 1em;
-    cursor: pointer;
-    border: none;
-    transition: ease .5s;
-    text-decoration: none;
-    color: black;
-}
-
-.btn1 {
-    background-color: #91f883;
-}
-
-.btn1:hover {
-    background-color: #36da20;
-    border-radius: 1.5em;
-}
-
-.btn2 {
-    background-color: rgb(252, 141, 141);
-}
-
-.btn2:hover {
-    background-color: rgb(218, 69, 69);
-    border-radius: 1.5em;
-}
 .carruseles {
     display: flex;
     justify-content: center;
@@ -166,37 +205,11 @@ h4 {
     padding: 20px;
 }
 
-.similares {
-    flex: 1 1 45%; /* Que ocupen el 45% del ancho y se adapten */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.carrusel:hover {
+    border-color: #a59de9;
 }
 
-.similares h3 {
-     color: #a59de9;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.contenedor-carrusel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-}
-
-.carrusel {
-    width: 100%;
-    max-width: 18.75em;
-    aspect-ratio: 2 / 3;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
+/* Carousel slides */
 .slide {
     display: none;
     width: 100%;
@@ -242,11 +255,11 @@ h4 {
 
     .perfil__avatar {
         margin: 0 0 50px 0;
-        width: 20%;
+        width: 140px !important;
     }
 
     .perfil__datos {
-        width: 100%;
+        width: 100% !important;
         margin: 2.5em 0;
         border-right-style: none;
         padding: 0;
@@ -257,7 +270,7 @@ h4 {
     }
 
     .perfil__metodo-pago {
-        width: 100%;
+        width: 100% !important;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -328,4 +341,65 @@ h4 {
         align-items: center;
         flex-direction: column;
     }
+}
+
+/* BOTONES / ERRORES */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: #0f0f1e;
+    background: rgba(165, 157, 233, 0.9);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn1 {
+    background: #6c5ce7;
+    color: #fff;
+    border-color: rgba(165, 157, 233, 0.7);
+}
+
+.btn1:hover {
+    background: #5b4bd4;
+}
+
+.btn2 {
+    background: rgba(255, 75, 43, 0.9);
+    color: #fff;
+    border-color: rgba(255, 75, 43, 0.8);
+}
+
+.btn2:hover {
+    background: rgba(255, 75, 43, 1);
+}
+
+.mensaje-error {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    min-height: 1.2rem;
 }

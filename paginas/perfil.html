@@ -64,7 +64,7 @@
         <section class="section__button--cerrarSesion">
             <a class="btn btn2 cerrar-sesion" href="../index.html">Cerrar Sesion</a>
         </section>
-        <form class="form">
+        <form class="form" method="get">
             <section class="perfil">
                 <div class="perfil__avatar">
                     <img src="../images/4792929.png" alt="foto-avatar">
@@ -102,8 +102,10 @@
                 <div class="perfil__metodo-pago">
                     <h4>Método de pago</h4>
                     <div class="perfil__metodo-pago_tipo">
-                        <input type="radio" name="opcion-pago" id="tarjeta-credito" value="Tarjeta de crédito">
-                        <label for="tarjeta-credito">Tarjeta de crédito</label>
+                        <div class="acomodar-radio">
+                            <label for="tarjeta-credito">Tarjeta de crédito</label>
+                            <input type="radio" name="opcion-pago" id="tarjeta-credito" value="Tarjeta de crédito">
+                        </div>
                         <div class="flex-row perfil__metodo-pago_tipo-credito">
                             <input type="text" name="Numero de tarjeta" placeholder="Numero de tarjeta" id="campo-texto-tarjeta">
                             <input type="text" name="codigo" inputmode="numeric" placeholder="XXX" id="codigo-texto-tarjeta"
@@ -111,9 +113,10 @@
                         </div>
                         <p class="mensaje-error numero-tarjeta-error-js"></p>
                         <p class="mensaje-error codigo-tarjeta-error-js"></p>
-
-                        <input type="radio" name="opcion-pago" id="cupon" value="Cupón de pago">
-                        <label for="cupon">Cupón de pago</label>
+                        <div class="acomodar-radio">
+                            <label for="cupon">Cupón de pago</label>
+                            <input type="radio" name="opcion-pago" id="cupon" value="Cupón de pago">
+                        </div>
                         <div class="flex-row perfil__metodo-pago_tipo-cupon">
                             <input type="checkbox" name="cupon" id="PF">
                             <label for="PF">Pago facil</label>
@@ -121,15 +124,16 @@
                             <label for="RP">RapiPago</label>
                         </div>
                         <p class="mensaje-error cupon-error"></p>
-
-                        <input type="radio" name="opcion-pago" id="Transferencia" value="Transferencia bancaria">
-                        <label for="Transferencia">Transferencia bancaria</label>
+                        <div class="acomodar-radio">
+                            <label for="Transferencia">Transferencia bancaria</label>
+                            <input type="radio" name="opcion-pago" id="Transferencia" value="Transferencia bancaria">
+                        </div>
                         <p>CBU: 201009098598929950 </p>
                     </div>
                 </div>
             </section>
             <div class="botones">
-                <input class="btn btn1 confirmar-cambios__js" id="confirmar-cambios-js" type="submit" method="get"
+                <input class="btn btn1 confirmar-cambios__js" id="confirmar-cambios-js" type="submit"
                     value="Confirmar cambios">
                 <a class="btn btn2 boton-cancelar-js" href="../index.html">Cancelar suscripcion</a>
             </div>
@@ -155,15 +159,39 @@
         </section>
 
     </main>
-    <footer>
-        <div class="footer__izquierda">
-            <p>Gomez, Gonzalo. 45128637</p>
-            <p>Cantoni, Matias. 43992333</p>
-            <p>Susik, Julian. 44816527</p>
-            <p>Moreno, Juan Martin. 46124805</p>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-columna marca">
+            <h2>Streaming <span>App</span></h2>
+            <p>Plataforma web dinámica para visualización de catálogo de series y películas.</p>
+            </div>
+
+            <div class="footer-columna equipo">
+            <h3>Desarrollo Frontend</h3>
+            <ul>
+                <li style="border: none; padding: 0; color: #fdfdfd; font-size: 1.1rem;">
+                <strong>Matias Cantoni</strong>
+                </li>
+                <li style="border: none; padding: 0; margin-bottom: 1rem;">
+                UI/UX & Web Developer
+                </li>
+                <li><a href="https://github.com/MatiasCantoni" target="_blank">Ver mi GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/matiascantoni2002" target="_blank">Conectar en LinkedIn</a></li>
+            </ul>
+            </div>
+
+            <div class="footer-columna legal">
+            <h3>Sobre el proyecto</h3>
+            <p style="color: #d1cadd; font-size: 0.9rem; line-height: 1.6;">
+                Este repositorio es una versión refactorizada y rediseñada por mí de un proyecto académico colaborativo originalmente entregado en 2025.
+            </p>
+            </div>
+
         </div>
-        <div class="footer__derecha">
-            <p>© GRUPO 2</p>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Matias Cantoni. Todos los derechos reservados.</p>
         </div>
     </footer>
     <script src="../js/perfil.js"></script>
