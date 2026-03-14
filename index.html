@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/indexStyles.css" rel="stylesheet">
+    <link href="./images/icon.png" rel="shortcut icon">
+
+    <title>Unflix</title>
+</head>
+
+<body>
+    <header class="header__primary"></header>
+    <main class="main__primary">
+        <form class="main__primary__form" action="./paginas/pantalla-principal.html" method="get">
+            <div class="main__primary__form__divItems">
+                <label class="main__primary__form__label" for="usuario">Nombre de usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" required>
+            </div>
+            <div class="main__primary__form__divItems">
+                <label class="main__primary__form__label" for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña" required>
+            </div>
+            <button class="main__primary__form__sendButton" type="submit" disabled>
+                Iniciar sesion
+            </button>
+        </form>
+        <div class="main__primary__divCase">
+            <a class="main__primary__divCase__a" href="./paginas/recuperarContraseña.html">Recuperar contraseña</a>
+            <a class="main__primary__divCase__a" href="./paginas/registrarUsuario.html">Registrarse</a>
+        </div>
+    </main>
+    <script src="./js/data.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

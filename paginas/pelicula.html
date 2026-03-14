@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peliculas</title>
+    <link rel="stylesheet" href="../css/peliculasStyles.css">
+    <link rel="stylesheet" href="../css/headerStyles.css">
+    <link rel="stylesheet" href="../css/footerStyles.css">
+    <link href="../images/icon.png" rel="shortcut icon">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header_nav">
+
+
+            <a href="../paginas/pantalla-principal.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                    width="24px" fill="black">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+                Home
+
+            </a>
+            <a href="../paginas/serie.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                    width="24px" fill="black">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                </svg>
+                Series
+
+
+
+            </a>
+            <a href="../paginas/pelicula.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                    width="24px" fill="black">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                </svg>
+                Peliculas</a>
+            <a href="../paginas/perfil.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                    height="24px" viewBox="0 0 24 24" width="24px" fill="black">
+                    <g>
+                        <rect fill="none" height="24" width="24" />
+                    </g>
+                    <g>
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z" />
+                    </g>
+                </svg>
+                Perfil</a>
+
+        </nav>
+    </header>
+    <main class="main">
+        <section class="seccion-filtros">
+            <form method="get">
+                <div class="filtro-categoria">
+                    <label for="categoria">Categorias</label>
+                    <select class="categoria" name="categoria" id="categoria">
+                        <option value="">Seleccione una categoría</option>
+                        <option value="accion">Accion</option>
+                        <option value="drama">Drama</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="terror">Terror</option>
+                    </select>
+                </div>
+                <div>
+                    <svg class="icon-filtro" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                        width="24px" fill="black">
+                        <path d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                    </svg>
+                    <input class="buscar" type="text" id="buscador" name="buscador" placeholder="Buscar por nombre">
+                </div>
+            </form>
+        </section>
+
+
+
+        <section class="contenido">
+            <div class="grilla-contenido">
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer__izquierda">
+            <p>Gomez, Gonzalo. 45128637</p>
+            <p>Cantoni, Matias. 43992333</p>
+            <p>Susik, Julian. 44816527</p>
+            <p>Moreno, Juan Martin. 46124805</p>
+        </div>
+        <div class="footer__derecha">
+            <p>© GRUPO 2</p>
+        </div>
+    </footer>
+    <script src="../js/dinamicaPantallaPrincipal.js"></script>
+</body>
+
+
+</html>

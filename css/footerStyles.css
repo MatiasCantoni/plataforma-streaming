@@ -1,0 +1,17 @@
+footer {
+    background-color: rgb(90, 90, 90);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.25em;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.footer__izquierda {
+    margin-left: 1.5em;
+}
+
+.footer__derecha {
+    margin-right: 1.5em;
+}

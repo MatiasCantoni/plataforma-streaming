@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/perfil-styles.css">
+    <link rel="stylesheet" href="../css/headerStyles.css">
+    <link rel="stylesheet" href="../css/footerStyles.css">
+    <link href="../images/icon.png" rel="shortcut icon">
+    <title>Perfil</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header_nav">
+
+
+            <a href="pantalla-principal.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                    width="24px" fill="black">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+                </svg>
+                Home
+
+            </a>
+            <a href="./serie.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                    width="24px" fill="black">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                </svg>
+                Series
+
+
+
+            </a>
+            <a href="./pelicula.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24"
+                    width="24px" fill="black">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path
+                        d="M18 3v2h-2V3H8v2H6V3H4v18h2v-2h2v2h8v-2h2v2h2V3h-2zM8 17H6v-2h2v2zm0-4H6v-2h2v2zm0-4H6V7h2v2zm10 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V7h2v2z" />
+                </svg>
+                Peliculas</a>
+            <a href="./perfil.html">
+                <svg class="icon-header" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+                    height="24px" viewBox="0 0 24 24" width="24px" fill="black">
+                    <g>
+                        <rect fill="none" height="24" width="24" />
+                    </g>
+                    <g>
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 4c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm0 14c-2.03 0-4.43-.82-6.14-2.88C7.55 15.8 9.68 15 12 15s4.45.8 6.14 2.12C16.43 19.18 14.03 20 12 20z" />
+                    </g>
+                </svg>
+                Perfil</a>
+
+        </nav>
+    </header>
+    <main>
+        <section class="section__button--cerrarSesion">
+            <a class="btn btn2 cerrar-sesion" href="../index.html">Cerrar Sesion</a>
+        </section>
+        <form class="form">
+            <section class="perfil">
+                <div class="perfil__avatar">
+                    <img src="../images/4792929.png" alt="foto-avatar">
+                    <p class="usuario-js"></p>
+                </div>
+                <div class="perfil__datos">
+                    <h4>Datos</h4>
+                    <div class="perfil__datos-grupo">
+                        <p>E-Mail</p>
+                        <p class="email-js"></p>
+                    </div>
+                    <div class="perfil__datos-grupo">
+                        <p>Contraseña</p>
+                        <p class="contrasenia-js"></p>
+                    </div>
+                    <div class="perfil__datos-grupo">
+                        <label for="contraseña-nueva">Nueva Contraseña</label>
+                        <input type="password" name="contraseña-nueva" id="contraseña-nueva"
+                            placeholder="Ingrese nueva contraseña">
+                    </div>
+                    <div>
+                        <p id="mensaje-error-js" class="mensaje-error"></p>
+                    </div>
+                    <div class="perfil__datos-grupo">
+                        <label for="repetir-contraseña">Repetir Contraseña</label>
+                        <input type="password" name="repetir-contraseña" id="repetir-contraseña"
+                            placeholder="Repita nueva contraseña">
+                    </div>
+                    <div>
+                        <p id="mensaje-errorb-js" class="mensaje-error"></p>
+                    </div>
+
+                </div>
+
+                <div class="perfil__metodo-pago">
+                    <h4>Método de pago</h4>
+                    <div class="perfil__metodo-pago_tipo">
+                        <input type="radio" name="opcion-pago" id="tarjeta-credito" value="Tarjeta de crédito">
+                        <label for="tarjeta-credito">Tarjeta de crédito</label>
+                        <div class="flex-row perfil__metodo-pago_tipo-credito">
+                            <input type="text" name="Numero de tarjeta" placeholder="Numero de tarjeta" id="campo-texto-tarjeta">
+                            <input type="text" name="codigo" inputmode="numeric" placeholder="XXX" id="codigo-texto-tarjeta"
+                                pattern="\d{3}" maxlength="3">
+                        </div>
+                        <p class="mensaje-error numero-tarjeta-error-js"></p>
+                        <p class="mensaje-error codigo-tarjeta-error-js"></p>
+
+                        <input type="radio" name="opcion-pago" id="cupon" value="Cupón de pago">
+                        <label for="cupon">Cupón de pago</label>
+                        <div class="flex-row perfil__metodo-pago_tipo-cupon">
+                            <input type="checkbox" name="cupon" id="PF">
+                            <label for="PF">Pago facil</label>
+                            <input type="checkbox" name="cupon" id="RP">
+                            <label for="RP">RapiPago</label>
+                        </div>
+                        <p class="mensaje-error cupon-error"></p>
+
+                        <input type="radio" name="opcion-pago" id="Transferencia" value="Transferencia bancaria">
+                        <label for="Transferencia">Transferencia bancaria</label>
+                        <p>CBU: 201009098598929950 </p>
+                    </div>
+                </div>
+            </section>
+            <div class="botones">
+                <input class="btn btn1 confirmar-cambios__js" id="confirmar-cambios-js" type="submit" method="get"
+                    value="Confirmar cambios">
+                <a class="btn btn2 boton-cancelar-js" href="../index.html">Cancelar suscripcion</a>
+            </div>
+        </form>
+        <section class="carruseles">
+            <div class="similares">
+                <h3>Series Favoritas</h3>
+                <div class="contenedor-carrusel">
+                    <button class="prev">←</button>
+                    <div class="carrusel" id="carrusel-series"></div>
+                    <button class="next">→</button>
+                </div>
+            </div>
+
+            <div class="similares">
+                <h3>Películas Favoritas</h3>
+                <div class="contenedor-carrusel">
+                    <button class="prev">←</button>
+                    <div class="carrusel" id="carrusel-peliculas"></div>
+                    <button class="next">→</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="footer__izquierda">
+            <p>Gomez, Gonzalo. 45128637</p>
+            <p>Cantoni, Matias. 43992333</p>
+            <p>Susik, Julian. 44816527</p>
+            <p>Moreno, Juan Martin. 46124805</p>
+        </div>
+        <div class="footer__derecha">
+            <p>© GRUPO 2</p>
+        </div>
+    </footer>
+    <script src="../js/perfil.js"></script>
+    <!-- <script src="../js/registrarUsuario.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #262643;
+}
+
+/*Le ponemos border-box para que no se exceda del width y genere scroll horizontal*/
+.header__title {
+    width: 98%;
+    margin: 4em auto;
+    box-sizing: border-box;
+    padding: 2em;
+}
+
+.header__title__h1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2em;
+    color: #a59de9;
+}
+
+.main__primary {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+/*Definimos el formulario con direccion en columna para que los div vayan uno abajo del otro*/
+.main__primary__form {
+    width: 70%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+}
+
+/*Ponemos flex start para que se alineen los label a la derecha y separarlos del input con el gap*/
+.main__primary__form--items {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    gap: 3em;
+    align-items: center;
+}
+
+/*Alineamos el texto del label a la derecha*/
+.main__primary__form--items--label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 100%;
+    width: 45%;
+    text-align: right;
+    color: #a59de9;
+}
+
+.main__primary__form--items input {
+    width: 14em;
+    height: 100%;
+    padding-left: 0.4em;
+}
+
+/*Modificamos el ultimo div, el que contiene los botones, para que este centrado y se separen entre si*/
+.main__primary__form--items:last-child {
+    justify-content: center;
+    gap: 4em;
+}
+
+/*Estilos base de AMBOS botones*/
+.main__primary__form--items button,
+a {
+    font-size: 1em;
+    width: 15em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+/*Colores de cada boton*/
+.main__primary__form--items--buttonA {
+    height: 2.5em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(144, 238, 144);
+}
+
+.main__primary__form--items--buttonA:hover {
+    background-color: rgb(4, 187, 4);
+}
+
+.main__primary__form--items--buttonB {
+    height: 2.25em;
+    text-decoration: none;
+    color: inherit;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(223, 50, 50);
+}
+
+.main__primary__form--items--buttonB:hover {
+    background-color: rgb(206, 1, 1);
+}
+
+@media screen and (max-width:768px) {
+
+    /*Adaptamos el media queri para que el form sea mas ancho y los elementos tengan mas espacio para expandirse*/
+    .main__primary__form {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    /*Reducimos el tamaño del titulo para que no se expanda hacia abajo*/
+    .header__title {
+        font-size: 0.8em;
+    }
+
+    .main__primary__form {
+        width: 100%;
+    }
+
+    /*Reducimos el tamaño de los botones*/
+    .main__primary__form--items button {
+        width: 13em;
+    }
+
+    /*Reducimos el gap entre los botones*/
+    .main__primary__form--items:last-child {
+        gap: 1.5em;
+    }
+
+    /*Reducimos el gap entre los label e input*/
+    .main__primary__form--items {
+        gap: 2em;
+    }
+
+    /*Reducimos el tamaño de los input*/
+    .main__primary__form--items input {
+        width: 12em;
+    }
+}

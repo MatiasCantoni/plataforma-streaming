@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../css/registrarseStyles.css" rel="stylesheet">
+    <link href="../images/icon.png" rel="shortcut icon">
+    <title>Registrarse</title>
+</head>
+
+<body>
+    <header class="primary__header">
+        <h1 class="primary__header__h1">Registrarse</h1>
+    </header>
+   <main class="primary__main">
+  <form class="primary__main__form" action="../index.html" method="get" id="registerForm">
+    <section class="primary__main__form__sectionLeft">
+      <label class="primary__main__form__sectionLeft__label" for="nombre">Nombre</label>
+      <div class="campo-con-error">
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" >
+        <p id="error-nombre" class="mensaje-error js-nombre-error"></p>
+      </div>
+
+      <label class="primary__main__form__sectionLeft__label" for="apellido">Apellido</label>
+      <div class="campo-con-error">
+        <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" >
+        <p id="error-apellido" class="mensaje-error js-apellido-error"></p>
+      </div>
+
+      <label class="primary__main__form__sectionLeft__label" for="correo">E-mail</label>
+      <div class="campo-con-error">
+        <input type="email" id="correo" name="correo" placeholder="Ingrese email" >
+        <p id="error-email" class="mensaje-error js-correo-error"></p>
+      </div>
+
+      <label class="primary__main__form__sectionLeft__label" for="usuario">Nombre de usuario</label>
+      <div class="campo-con-error">
+        <input type="text" id="usuario" name="usuario" placeholder="Nombre de usuario" >
+        <p id="error-usuario" class="mensaje-error js-usuario-error"></p>
+      </div>
+
+      <label class="primary__main__form__sectionLeft__label" for="contrasenia">Contraseña</label>
+      <div class="campo-con-error">
+        <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña">
+        <p id="error-contrasenia" class="mensaje-error js-contrasenia-error"></p>
+      </div>
+
+      <label class="primary__main__form__sectionLeft__label" for="contraseniaB">Repetir contraseña</label>
+      <div class="campo-con-error">
+        <input type="password" id="contraseniaB" name="contraseniaB" placeholder="Repetir contraseña">
+        <p id="error-contraseniaB" class="mensaje-error js-contraseniaB-error"></p>
+      </div>
+    </section>
+
+    <section class="primary__main__form__sectionRight">
+      <p>Método de pago</p>
+      <p class="mensaje-error js-metodoPago-error"></p>
+
+      <label class="primary__main__form__sectionRight__label">
+        <input type="radio" id="tarjeta" name="metodoPago" >
+        Tarjeta de crédito
+      </label>
+
+      <div class="primary__main__form__sectionRight--datosTarjeta">
+        <div class="input-con-error">
+          <input type="text" id="numeroTarjeta" name="numeroTarjeta" placeholder="Numero de tarjeta">
+          <p id="error-numeroTarjeta" class="mensaje-error js-numeroTarjeta-error"></p>
+        </div>
+
+        <div class="input-con-error">
+          <input type="text" id="codTarjeta" name="codTarjeta" placeholder="XXX" maxlength="3">
+          <p id="error-codTarjeta" class="mensaje-error js-codTarjeta-error"></p>
+        </div>
+      </div>
+
+      <label class="primary__main__form__sectionRight__label">
+        <input type="radio" id="cupon" name="metodoPago">
+        Cupón de pago
+        <div class="primary__main__form__sectionRight__cupon">
+          <label class="primary__main__form__sectionRight__label--sublabel">
+            <input type="checkbox" name="tipoCupon" id="pago-facil" value="pago-facil"> Pago Fácil
+          </label>
+          <label class="primary__main__form__sectionRight__label--sublabel">
+            <input type="checkbox" name="tipoCupon" id="rapi-pago" value="rapi-pago"> RapiPago
+          </label>
+        </div>
+      </label>
+
+      <label class="primary__main__form__sectionRight__label">
+        <input type="radio" id="transferencia" name="metodoPago">
+        Transferencia bancaria
+      </label>
+
+      <div class="primary__main__form__sectionRight__transferencia">
+        <p>CBU : 2183909411100018971375</p>
+      </div>
+
+      <div class="primary__main__form__sectionRight__buttons">
+        <button type="submit" id="buttonConfirm" class="btn js-sumbit-btn" disabled>Confirmar</button>
+        <a class="primary__main__form__sectionRight__buttons--cancelar" href="../index.html">Cancelar</a>
+      </div>
+      <div class="message-success js-message"></div>
+    </section>
+  </form>
+  
+</main>
+
+<script src="../js/registrarUsuario.js"></script>
+</body>
+
+</html>

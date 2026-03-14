@@ -1,0 +1,144 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #262643;
+}
+
+
+/*Header con estilos para el banner*/
+.header__primary {
+    background-image: url("../images/bannerPC.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 1.8rem;
+    width: 95%;
+    height: 35%;
+    margin: 1rem auto;
+    box-sizing: border-box;
+    padding: 1rem 0;
+}
+
+/*Estilos del main*/
+.main__primary {
+    display: flex;
+    width: 80%;
+    height: 65%;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/*Estilos del formulario y sus divs para ordenar*/
+.main__primary__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    /*Separa los input entre si*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main__primary__form__divItems {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    /*Separa los label de los input*/
+    align-items: center;
+}
+
+.main__primary__form__label {
+    width: 40%;
+    text-align: right;
+    color: #a59de9;
+}
+
+/*Estilo para los input*/
+#usuario,
+#contraseña {
+    width: 50%;
+    height: 100%;
+    padding-left: 0.5rem;
+}
+
+.main__primary__form__sendButton {
+    width: 30%;
+    padding: 0.5rem 1.2rem;
+    background-color: lightgreen;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.main__primary__form__sendButton:hover{
+    background-color: #36da20;
+}
+
+/*Estilo para los links*/
+.main__primary__divCase__a {
+    width: 100%;
+    height: 15%;
+    margin-top: 1rem;
+    gap: 0.7rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #a59de9;
+}
+.main__primary__divCase__a:hover{
+    text-decoration: underline;
+}
+
+/*Media querie para tablets*/
+@media (max-width: 768px) {
+    .main__primary {
+        width: 100%;
+    }
+
+    .main__primary__form__divItems {
+        width: 80%;
+    }
+}
+
+/*Media querie para celulares mas chicos*/
+@media (max-width: 480px) {
+    .main__primary {
+        width: 100%;
+    }
+
+    .main__primary__form__divItems {
+        width: 100%;
+    }
+
+    .main__primary__form__label {
+        width: 45%;
+    }
+
+    #usuario,
+    #contraseña {
+        width: 45%;
+        height: 100%;
+        padding-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    .main__primary__form__sendButton {
+        width: 60%;
+        margin: 1em;
+    }
+}

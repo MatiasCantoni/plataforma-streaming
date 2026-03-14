@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #262643;
+}
+
+.header_nav a:last-of-type {
+    background-color: lightgrey;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.imagen {
+    width: 10%;
+}
+
+.section__button--cerrarSesion {
+    width: 100%;
+    height: 4em;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.section__button--cerrarSesion a {
+    margin-right: 1em;
+}
+
+.perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+     color: #a59de9;
+}
+.mensaje-error{
+    color: red;
+    font-size: 11px;
+}
+
+.perfil__avatar {
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    margin-left: -3%;
+    margin-top: -2%;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.perfil__avatar img {
+    border-radius: 50%;
+    border: 1px solid #a59de9;;
+}
+
+.perfil__datos {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    border-right-style: ridge;
+    padding-right: 2em;
+}
+
+.perfil__datos-grupo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.perfil__datos-grupo input {
+    padding: 0.2em;
+}
+
+.perfil__metodo-pago {
+    width: 30%;
+    margin: 2% 0 0 0%;
+}
+
+h4 {
+    text-decoration: underline;
+    text-align: center;
+}
+
+.perfil__metodo-pago_tipo {
+    padding-left: 4%;
+    margin-top: 0.5em;
+}
+
+.perfil__metodo-pago_tipo-credito {
+    padding-left: 1.2em;
+    margin-bottom: 1em;
+    gap: 0.3em;
+}
+
+.perfil__metodo-pago_tipo-credito input {
+    padding: 0.5em;
+}
+
+.perfil__metodo-pago_tipo-credito input:last-child {
+    width: 1.8em;
+
+}
+
+.perfil__metodo-pago_tipo-cupon {
+    gap: 0.7em;
+    margin-left: 1.5em;
+    margin-bottom: 0.9em;
+}
+
+.perfil__metodo-pago_tipo p:last-child {
+    margin-top: 0.9em;
+    text-align: center;
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.7em;
+    gap: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.btn {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9em;
+    border-radius: 1em;
+    padding: 1em;
+    cursor: pointer;
+    border: none;
+    transition: ease .5s;
+    text-decoration: none;
+    color: black;
+}
+
+.btn1 {
+    background-color: #91f883;
+}
+
+.btn1:hover {
+    background-color: #36da20;
+    border-radius: 1.5em;
+}
+
+.btn2 {
+    background-color: rgb(252, 141, 141);
+}
+
+.btn2:hover {
+    background-color: rgb(218, 69, 69);
+    border-radius: 1.5em;
+}
+.carruseles {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap; /* Permite que bajen en pantallas chicas */
+    padding: 20px;
+}
+
+.similares {
+    flex: 1 1 45%; /* Que ocupen el 45% del ancho y se adapten */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.similares h3 {
+     color: #a59de9;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.contenedor-carrusel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.carrusel {
+    width: 100%;
+    max-width: 18.75em;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.activo {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.prev,
+.next {
+    font-size: 2.5rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+/*      MEDIAQUERY */
+@media screen and (max-width:1012px) and (min-width: 769px) {
+    .perfil__datos-grupo input {
+        width: 120px;
+    }
+}
+
+/* VISTA HASTA 768PX - LAPTOP */
+@media screen and (max-width:768px) {
+    .perfil {
+        margin-top: 3%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .perfil__avatar {
+        margin: 0 0 50px 0;
+        width: 20%;
+    }
+
+    .perfil__datos {
+        width: 100%;
+        margin: 2.5em 0;
+        border-right-style: none;
+        padding: 0;
+    }
+
+    .perfil__datos-grupo {
+        justify-content: space-around;
+    }
+
+    .perfil__metodo-pago {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 3.125em 0;
+    }
+
+    h4 {
+        margin-bottom: 1em;
+    }
+
+    .perfil__metodo-pago_tipo {
+        padding-left: 0;
+    }
+
+    .perfil__metodo-pago_tipo p:last-child {
+        margin-top: 1.25em;
+    }
+
+    .perfil__metodo-pago_tipo-credito {
+        margin: 1.25em 0 1.25em 2.8em;
+        gap: 0.3em;
+    }
+
+    .perfil__metodo-pago_tipo-cupon {
+        margin: 1.25em 0 1.25em 2.8em;
+    }
+}
+
+/* VISTA HASTA 375px - LAPTOP */
+@media screen and (max-width:425px) {
+    .perfil__metodo-pago {
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    .perfil__metodo-pago p:first-child {
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+
+    .perfil__metodo-pago_tipo {
+        padding-left: 0;
+    }
+
+    .perfil__metodo-pago_tipo p:last-child {
+        margin-top: 1.25em;
+    }
+
+    .perfil__metodo-pago_tipo-credito {
+        margin: 1em 0 1.5em 0;
+        gap: 0.3em;
+    }
+
+    .perfil__metodo-pago_tipo-cupon {
+        margin: 1.25em 0 1.25em 0px;
+        padding-left: 1.5em;
+    }
+
+    .formulario {
+        margin-top: 2.5em;
+        gap: 2.5em;
+    }
+}
+@media screen and (max-width:600px){
+    .carruseles{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

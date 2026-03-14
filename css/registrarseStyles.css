@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #262643;
+}
+
+.primary__header {
+    width: 35%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2em 3em;
+    color: #a59de9;
+}
+.mensaje-error {
+  color: #dc3545; /* Rojo para errores */
+  font-size: 0.875rem; /* Tamaño de fuente más pequeño */
+}
+.primary__main {
+    width: 95%;
+    margin: auto;
+    height: 65vh;
+}
+
+/*Aplicamos grid para tener columna izquierda y derecha*/
+.primary__main__form {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 2em;
+}
+
+.primary__main__form__sectionLeft {
+    width: 100%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 0;
+    color: #a59de9;
+}
+
+.primary__main__form__sectionRight {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    color: #a59de9;
+}
+
+.primary__main__form__divButtons {
+    width: 100%;
+}
+
+/*Estilos para los label de la seccion izquierda*/
+.primary__main__form__sectionLeft__label {
+    width: 60%;
+    text-align: right;
+    font-size: 1em;
+    align-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*Estilos para los input de la seccion derecha*/
+.primary__main__form__sectionLeft input {
+    width: 90%;
+    height: 2.2em; /* Altura fija */
+    padding-left: 0.5em;
+    line-height: 1em;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/*Estilo para las 3 opciones del radio button*/
+.primary__main__form__sectionRight__label {
+    width: auto;
+    margin: 0em 0em 0.5em 1.5em;
+}
+
+#tarjeta,
+#cupon,
+#transferencia {
+    margin: 2em 0em 0em 0em;
+}
+
+/*Estilo para los datos de la tarjeta y sus input*/
+.primary__main__form__sectionRight--datosTarjeta {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.5em 0em 0em 3.5em;
+    gap: 1.5em;
+}
+
+#numeroTarjeta {
+    min-width: 35%;
+    height: 2.5em;
+    padding-left: 0.5em;
+}
+
+#codTarjeta {
+    width: 3.5em;
+    height: 2.5em;
+    padding-left: 0.5em;
+}
+
+/*Estilos para cupon de pago
+Flex-start para juntar los sub-label rapipago y pago facil
+*/
+.primary__main__form__sectionRight__cupon {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.primary__main__form__sectionRight__label--sublabel {
+    width: 8em;
+    margin: 0.5em 0em 0.5em 2em;
+}
+
+/*Estilos para la transferencia*/
+.primary__main__form__sectionRight__transferencia {
+    width: auto;
+    margin: 1em 0em 0em 5em;
+}
+
+/*Estilos para el div de botones*/
+.primary__main__form__sectionRight__buttons {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+    gap: 3em;
+}
+
+/*Estilos en comun para ambos botones, luego con el ID les asignamos colores*/
+.primary__main__form__sectionRight__buttons button,
+a {
+    width: 11em;
+    height: 2.25em;
+    font-size: 1em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+#buttonConfirm {
+    background-color: rgb(144, 238, 144);
+}
+
+#buttonConfirm:hover {
+    background-color: rgb(22, 206, 22);
+}
+
+
+.primary__main__form__sectionRight__buttons--cancelar {
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    background-color: rgb(223, 50, 50);
+}
+
+.primary__main__form__sectionRight__buttons--cancelar:hover {
+    background-color: rgb(241, 0, 0);
+}
+
+@media screen and (max-width:768px) {
+
+    /*Modificamos a una columna sola*/
+    .primary__main__form {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (max-width:465px) {
+
+    /*Modificamos a una columna sola*/
+    .primary__main__form {
+        grid-template-columns: 1fr;
+    }
+
+    /*Mas width a las secciones y menor tamaño de fuentes*/
+    .primary__main__form__sectionLeft,
+    .primary__main__form__sectionRight {
+        font-size: 0.8em;
+        width: 90%;
+    }
+
+    /*Reducimos el tamaño de los botones*/
+    .primary__main__form__sectionRight__buttons button {
+        width: 10em;
+    }
+}
